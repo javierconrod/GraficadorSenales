@@ -21,7 +21,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="194,155,0,0" TextWrapping="Wrap" Text="Tiempo Final" VerticalAlignment="Top" Foreground="Crimson" Width="95"/>
         <TextBlock HorizontalAlignment="Left" Margin="194,98,0,0" TextWrapping="Wrap" Text="Tiempo Inicial" VerticalAlignment="Top" Foreground="Crimson" Width="103"/>
 
-        <ScrollViewer HorizontalAlignment="Left" Height="161" Margin="25,295,0,0" VerticalAlignment="Top" Width="294" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
+        <ScrollViewer HorizontalAlignment="Left" Height="161" Margin="25,295,0,0" VerticalAlignment="Top" Width="295" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
             <Polyline Stroke="Crimson" StrokeThickness="2" Name="plnGrafica" />
         </ScrollViewer>
         <TextBox x:Name="txtFrecuenciaMuestreo" HorizontalAlignment="Left" Height="23" Margin="194,224,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="125"/>
