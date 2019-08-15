@@ -43,7 +43,7 @@ namespace GraficadorSeñales
 
             for(double i = tiempoInicial; i <= tiempoFinal; i+= periodoMuestreo)
             {
-                plnGrafica.Points.Add(new Point(i, señal.evaluar(i)));
+                plnGrafica.Points.Add(new Point(i*294, señal.evaluar(i)+80));
             }
 
 
