@@ -24,6 +24,14 @@ namespace GraficadorSeñales
         {
             InitializeComponent();
 
+            plnGrafica.Points.Add(new Point(0,10));
+            plnGrafica.Points.Add(new Point(20, 15));
+            plnGrafica.Points.Add(new Point(30, 5));
+            plnGrafica.Points.Add(new Point(40, 0));
+            plnGrafica.Points.Add(new Point(60, 20));
+            plnGrafica.Points.Add(new Point(100, 45));
+            plnGrafica.Points.Add(new Point(750, 0));
+
         }
 
         private void BtnGraficar_Click(object sender, RoutedEventArgs e)
@@ -41,10 +49,12 @@ namespace GraficadorSeñales
 
             plnGrafica.Points.Clear();
 
-            for (double i = tiempoInicial; i <= tiempoFinal; i += periodoMuestreo)
+            for(double i = tiempoInicial; i <= tiempoFinal; i+= periodoMuestreo)
             {
-                plnGrafica.Points.Add(new Point(i * (scrollGrafica.Width - 30), -1 * (señal.evaluar(i) * (scrollGrafica.Height - 60) / 2 - (0.5 * scrollGrafica.Height))));
+
             }
+
+
         }
     }
 }

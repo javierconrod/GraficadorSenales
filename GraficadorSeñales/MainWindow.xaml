@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraficadorSeñales"
         mc:Ignorable="d"
-        Title="MainWindow" Height="505.268" Width="372.542" ResizeMode="NoResize">
+        Title="MainWindow" Height="506" Width="361.877" ResizeMode="NoResize">
     <Grid>
 
         <Button x:Name="btnGraficar" Content="Graficar" HorizontalAlignment="Left" Margin="229,258,0,0" VerticalAlignment="Top" Width="90" Height="23" Background="Crimson" Foreground="White" BorderBrush="Crimson" Click="BtnGraficar_Click"/>
@@ -21,7 +21,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="194,155,0,0" TextWrapping="Wrap" Text="Tiempo Final" VerticalAlignment="Top" Foreground="Crimson" Width="95"/>
         <TextBlock HorizontalAlignment="Left" Margin="194,98,0,0" TextWrapping="Wrap" Text="Tiempo Inicial" VerticalAlignment="Top" Foreground="Crimson" Width="103"/>
 
-        <ScrollViewer x:Name="scrollGrafica" HorizontalAlignment="Left" Height="140" Margin="25,295,0,0" VerticalAlignment="Top" Width="294" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Visible">
+        <ScrollViewer HorizontalAlignment="Left" Height="161" Margin="25,295,0,0" VerticalAlignment="Top" Width="294" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
             <Polyline Stroke="Crimson" StrokeThickness="2" Name="plnGrafica" />
         </ScrollViewer>
         <TextBox x:Name="txtFrecuenciaMuestreo" HorizontalAlignment="Left" Height="23" Margin="194,224,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="125"/>
