@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace GraficadorSeñales
 {
-    class FuncionSigno
+    class FuncionSigno : Señal
     {
-        public List<Muestra> Muestras { get; set; }
 
         public FuncionSigno()
         {
             Muestras = new List<Muestra>();
         }
 
-        public double evaluar(double tiempo)
+        override public double evaluar(double tiempo)
         {
             double resultado;
             if(tiempo > 0.0)

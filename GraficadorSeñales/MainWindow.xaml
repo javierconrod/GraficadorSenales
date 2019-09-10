@@ -58,6 +58,8 @@
         <ComboBox x:Name="cbTipoSeñal" HorizontalAlignment="Left" Margin="25,55,0,0" VerticalAlignment="Top" Width="127" Height="25" SelectionChanged="CbTipoSeñal_SelectionChanged">
             <ComboBoxItem>Señal Parabólica</ComboBoxItem>
             <ComboBoxItem>Señal Senoidal</ComboBoxItem>
+            <ComboBoxItem>Función Signo</ComboBoxItem>
+            <ComboBoxItem>Exponencial Alfa</ComboBoxItem>
         </ComboBox>
 
 
