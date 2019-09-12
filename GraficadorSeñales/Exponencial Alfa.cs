@@ -20,7 +20,6 @@ namespace GraficadorSeñales
             Alfa = alfa;
             Muestras = new List<Muestra>();
         }
-
         override public double evaluar(double tiempo)
         {
             double resultado = Math.Exp(Alfa * tiempo);

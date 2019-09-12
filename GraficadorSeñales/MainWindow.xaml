@@ -60,6 +60,7 @@
             <ComboBoxItem>Señal Senoidal</ComboBoxItem>
             <ComboBoxItem>Función Signo</ComboBoxItem>
             <ComboBoxItem>Exponencial Alfa</ComboBoxItem>
+            <ComboBoxItem>Señal Audio</ComboBoxItem>
         </ComboBox>
 
 
