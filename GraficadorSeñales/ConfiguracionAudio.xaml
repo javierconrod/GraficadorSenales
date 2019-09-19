@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:GraficadorSeñales"
              mc:Ignorable="d" Width="153.151" Height="96.302">
     <Grid>
-        <TextBox x:Name="txtTiempoInicial" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="txtRutaArchivo" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Archivo" VerticalAlignment="Top" Foreground="Crimson" Width="103"/>
-        <Button x:Name="btnElegirArchivo" Content="Elegir" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="90" Height="23" Background="Crimson" Foreground="White" BorderBrush="Crimson" Click="BtnGraficar_Click"/>
+        <Button x:Name="btnElegirArchivo" Content="Elegir" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="90" Height="23" Background="Crimson" Foreground="White" BorderBrush="Crimson" Click="BtnElegirArchivo_Click"/>
 
     </Grid>
 </UserControl>

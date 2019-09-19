@@ -33,15 +33,11 @@ namespace GraficadorSeñales
             double tiempoFinal = double.Parse(txtTiempoFinal.Text);
             double frecuenciaMuestreo = double.Parse(txtFrecuenciaMuestreo.Text);
 
-            /*SeñalSenoidal señal = new SeñalSenoidal(amplitud, fase, frecuencia);*/
-
-            /*SeñalParabolica señal = new SeñalParabolica();*/
-
-            // FuncionSigno señal = new FuncionSigno();
-
             Señal señal;
 
-            switch(cbTipoSeñal.SelectedIndex)
+            
+
+            switch (cbTipoSeñal.SelectedIndex)
             {
                 case 0: //parabólica
                     señal = new SeñalParabolica();
@@ -58,17 +54,28 @@ namespace GraficadorSeñales
                 case 3: //exponencial alfa
                     double alfa = double.Parse(((ConfiguracionSeñalExponencialAlfa)(panelConfiguracion.Children[0])).txtAlfa.Text);
                     señal = new Exponencial_Alfa(alfa);
+                    
+                    break;
+                case 4: //audio
+                    string rutaArchivo = ((ConfiguracionAudio)(panelConfiguracion.Children[0])).txtRutaArchivo.Text;
+                    señal = new SeñalAudio(rutaArchivo);
+                    txtTiempoInicial.Text = señal.TiempoInicial.ToString();
+                    txtTiempoFinal.Text = señal.TiempoFinal.ToString();
+                    txtFrecuenciaMuestreo.Text = señal.FrecuenciaMuestreo.ToString();
                     break;
                 default:
                     señal = null;
                     break;
             }
 
-            señal.TiempoFinal = tiempoFinal;
-            señal.TiempoInicial = tiempoInicial;
-            señal.FrecuenciaMuestreo = frecuenciaMuestreo;
+            if(cbTipoSeñal.SelectedIndex != 4 && señal != null)
+            {
+                señal.TiempoFinal = tiempoFinal;
+                señal.TiempoInicial = tiempoInicial;
+                señal.FrecuenciaMuestreo = frecuenciaMuestreo;
 
-            señal.construirSeñal();
+                señal.construirSeñal();
+            }
 
             double amplitudMaxima = señal.AmplitudMaxima;
 
@@ -116,6 +123,9 @@ namespace GraficadorSeñales
                     break;
                 case 3:
                     panelConfiguracion.Children.Add(new ConfiguracionSeñalExponencialAlfa());
+                    break;
+                case 4:
+                    panelConfiguracion.Children.Add(new ConfiguracionAudio());
                     break;
                 default:
                     break;

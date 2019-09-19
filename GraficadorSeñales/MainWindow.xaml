@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraficadorSeñales"
         mc:Ignorable="d"
-        Title="MainWindow" Height="505.268" Width="372.542" ResizeMode="NoResize">
+        Title="MainWindow" Height="677.268" Width="484.542" ResizeMode="NoResize">
     <Grid>
 
         <Button x:Name="btnGraficar" Content="Graficar" HorizontalAlignment="Left" Margin="229,258,0,0" VerticalAlignment="Top" Width="90" Height="23" Background="Crimson" Foreground="White" BorderBrush="Crimson" Click="BtnGraficar_Click"/>
@@ -62,6 +62,43 @@
             <ComboBoxItem>Exponencial Alfa</ComboBoxItem>
             <ComboBoxItem>Señal Audio</ComboBoxItem>
         </ComboBox>
+        <ScrollViewer x:Name="scrGraficaResultante" HorizontalAlignment="Left" Height="140" Margin="75,459,0,0" VerticalAlignment="Top" Width="244" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
+            <Grid>
+                <Polyline Stroke="Crimson" StrokeThickness="2" x:Name="plnGraficaResultante" />
+                <Polyline Stroke="Black" StrokeThickness="1" x:Name="plnEjeXResultante" />
+                <Polyline Stroke="Black" StrokeThickness="1" x:Name="plnEjeYResultante" />
+            </Grid>
+        </ScrollViewer>
+        <TextBlock x:Name="lblAmplitudResultanteSuperior" HorizontalAlignment="Left" Margin="25,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.525,0.929" Width="41" Height="16" Text="0" TextAlignment="Right">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.14"/>
+                    <TranslateTransform X="-0.034" Y="0.003"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="lblAmplitudResultanteInferior" HorizontalAlignment="Left" Margin="25,583,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.525,0.929" Width="41" Height="16" Text="0" TextAlignment="Right">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.14"/>
+                    <TranslateTransform X="-0.034" Y="0.003"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="lblAmplitudResultanteCentro" HorizontalAlignment="Left" Margin="25,517,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.489,1.25" Width="41" Height="16" Text="0" TextAlignment="Right">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.14"/>
+                    <TranslateTransform X="-0.048" Y="-0.001"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
 
 
     </Grid>

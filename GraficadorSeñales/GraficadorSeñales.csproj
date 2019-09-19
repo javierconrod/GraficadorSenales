@@ -72,6 +72,7 @@
     <Compile Include="FuncionSigno.cs" />
     <Compile Include="Muestra.cs" />
     <Compile Include="Señal.cs" />
+    <Compile Include="SeñalAudio.cs" />
     <Compile Include="SeñalParabolica.cs" />
     <Compile Include="SeñalSenoidal.cs" />
     <Page Include="ConfiguracionAudio.xaml">
