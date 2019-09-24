@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraficadorSeñales"
         mc:Ignorable="d"
-        Title="MainWindow" Height="677.268" Width="484.542" ResizeMode="NoResize">
+        Title="MainWindow" Height="677.268" Width="577.542" ResizeMode="NoResize">
     <Grid>
 
         <Button x:Name="btnGraficar" Content="Graficar" HorizontalAlignment="Left" Margin="229,258,0,0" VerticalAlignment="Top" Width="90" Height="23" Background="Crimson" Foreground="White" BorderBrush="Crimson" Click="BtnGraficar_Click"/>
@@ -99,6 +99,11 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="194,32,0,0" TextWrapping="Wrap" Text="Operación" VerticalAlignment="Top" Foreground="Crimson" Width="103"/>
+        <ComboBox x:Name="cbOperacion" HorizontalAlignment="Left" Margin="194,55,0,0" VerticalAlignment="Top" Width="127" Height="25" SelectionChanged="CbOperacion_SelectionChanged">
+            <ComboBoxItem Content="Escala Amplitud"/>
+        </ComboBox>
+        <Grid x:Name="panelConfiguracionOperacion" HorizontalAlignment="Left" Height="57" Margin="339,32,0,0" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0"/>
 
 
     </Grid>
