@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:GraficadorSeñales"
              mc:Ignorable="d" Height="62.773" Width="151.818">
     <Grid>
-        <TextBox x:Name="txtFactorEscala" HorizontalAlignment="Left" Height="23" Margin="10,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Text="0"/>
+        <TextBox x:Name="txtFactorEscala" HorizontalAlignment="Left" Height="23" Margin="10,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Text="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,2,0,0" TextWrapping="Wrap" Text="Factor de escala" VerticalAlignment="Top" Foreground="Crimson" Width="103"/>
     </Grid>
 </UserControl>

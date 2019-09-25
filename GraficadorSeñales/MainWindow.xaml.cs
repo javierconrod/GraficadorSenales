@@ -82,30 +82,34 @@ namespace GraficadorSeñales
                     double factorEscala = double.Parse(((ConfiguracionOperacionEscalaAmplitud)(panelConfiguracionOperacion.Children[0])).txtFactorEscala.Text);
                     señalResultante = Señal.escalarAmplitud(señal, factorEscala);
                     break;
+                case 1: //desplazamiento
+                    double cantidadDesplazamiento = double.Parse(((ConfiguracionOperacionDesplazamiento)(panelConfiguracionOperacion.Children[0])).txtCantidadDesplazamiento.Text);
+                    señalResultante = Señal.desplazamientoAmplitud(señal, cantidadDesplazamiento);
+                    break;
                 default:
                     señalResultante = null;
                     break;
             }
 
-            double amplitudMaxima = señal.AmplitudMaxima;
-            double amplitudMaximaResultante = señalResultante.AmplitudMaxima;
+            double amplitudMaxima = (señal.AmplitudMaxima >= señalResultante.AmplitudMaxima) ? señal.AmplitudMaxima : señalResultante.AmplitudMaxima;
 
             plnGrafica.Points.Clear();
             plnGraficaResultante.Points.Clear();
+
             foreach(Muestra muestra in señal.Muestras)
             {
                 plnGrafica.Points.Add(adaptarCoordenadas(muestra.X, muestra.Y, tiempoInicial, amplitudMaxima));
             }
             foreach(Muestra muestra in señalResultante.Muestras)
             {
-                plnGraficaResultante.Points.Add(adaptarCoordenadas(muestra.X, muestra.Y, tiempoInicial, amplitudMaximaResultante));
+                plnGraficaResultante.Points.Add(adaptarCoordenadas(muestra.X, muestra.Y, tiempoInicial, amplitudMaxima));
             }
 
             lblAmplitudSuperior.Text = amplitudMaxima.ToString("F");
             lblAmplitudInferior.Text = "-" + amplitudMaxima.ToString("F");
 
-            lblAmplitudResultanteSuperior.Text = amplitudMaximaResultante.ToString("F");
-            lblAmplitudResultanteInferior.Text = "-" + amplitudMaximaResultante.ToString("F");
+            lblAmplitudResultanteSuperior.Text = amplitudMaxima.ToString("F");
+            lblAmplitudResultanteInferior.Text = "-" + amplitudMaxima.ToString("F");
 
             plnEjeX.Points.Clear();
             plnEjeX.Points.Add(adaptarCoordenadas(tiempoInicial, 0.0, tiempoInicial, amplitudMaxima));
@@ -116,12 +120,12 @@ namespace GraficadorSeñales
             plnEjeY.Points.Add(adaptarCoordenadas(0.0, -amplitudMaxima, tiempoInicial, amplitudMaxima));
 
             plnEjeXResultante.Points.Clear();
-            plnEjeXResultante.Points.Add(adaptarCoordenadas(tiempoInicial, 0.0, tiempoInicial, amplitudMaximaResultante));
-            plnEjeXResultante.Points.Add(adaptarCoordenadas(tiempoFinal, 0.0, tiempoInicial, amplitudMaximaResultante));
+            plnEjeXResultante.Points.Add(adaptarCoordenadas(tiempoInicial, 0.0, tiempoInicial, amplitudMaxima));
+            plnEjeXResultante.Points.Add(adaptarCoordenadas(tiempoFinal, 0.0, tiempoInicial, amplitudMaxima));
 
             plnEjeYResultante.Points.Clear();
-            plnEjeYResultante.Points.Add(adaptarCoordenadas(0.0, amplitudMaximaResultante, tiempoInicial, amplitudMaximaResultante));
-            plnEjeYResultante.Points.Add(adaptarCoordenadas(0.0, -amplitudMaximaResultante, tiempoInicial, amplitudMaximaResultante));
+            plnEjeYResultante.Points.Add(adaptarCoordenadas(0.0, amplitudMaxima, tiempoInicial, amplitudMaxima));
+            plnEjeYResultante.Points.Add(adaptarCoordenadas(0.0, -amplitudMaxima, tiempoInicial, amplitudMaxima));
 
 
         }
@@ -163,7 +167,8 @@ namespace GraficadorSeñales
                 case 0: //escala de amplitud
                     panelConfiguracionOperacion.Children.Add(new ConfiguracionOperacionEscalaAmplitud());
                     break;
-                case 1: //escala de ...
+                case 1: //desplazamiento de amplitud
+                    panelConfiguracionOperacion.Children.Add(new ConfiguracionOperacionDesplazamiento());
                     break;
                 default:
                     break;

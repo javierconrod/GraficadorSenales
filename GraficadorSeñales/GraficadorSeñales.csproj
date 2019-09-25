@@ -62,6 +62,9 @@
     <Compile Include="ConfiguracionAudio.xaml.cs">
       <DependentUpon>ConfiguracionAudio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConfiguracionOperacionDesplazamiento.xaml.cs">
+      <DependentUpon>ConfiguracionOperacionDesplazamiento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ConfiguracionOperacionEscalaAmplitud.xaml.cs">
       <DependentUpon>ConfiguracionOperacionEscalaAmplitud.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
     <Compile Include="SeñalResultante.cs" />
     <Compile Include="SeñalSenoidal.cs" />
     <Page Include="ConfiguracionAudio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfiguracionOperacionDesplazamiento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

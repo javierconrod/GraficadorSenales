@@ -64,7 +64,7 @@
         </ComboBox>
         <ScrollViewer x:Name="scrGraficaResultante" HorizontalAlignment="Left" Height="140" Margin="75,459,0,0" VerticalAlignment="Top" Width="244" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
             <Grid>
-                <Polyline Stroke="Crimson" StrokeThickness="2" x:Name="plnGraficaResultante" />
+                <Polyline Stroke="Blue" StrokeThickness="2" x:Name="plnGraficaResultante" />
                 <Polyline Stroke="Black" StrokeThickness="1" x:Name="plnEjeXResultante" />
                 <Polyline Stroke="Black" StrokeThickness="1" x:Name="plnEjeYResultante" />
             </Grid>
@@ -102,6 +102,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="194,32,0,0" TextWrapping="Wrap" Text="Operación" VerticalAlignment="Top" Foreground="Crimson" Width="103"/>
         <ComboBox x:Name="cbOperacion" HorizontalAlignment="Left" Margin="194,55,0,0" VerticalAlignment="Top" Width="127" Height="25" SelectionChanged="CbOperacion_SelectionChanged">
             <ComboBoxItem Content="Escala Amplitud"/>
+            <ComboBoxItem Content="Desplazamiento de Amplitud"/>
         </ComboBox>
         <Grid x:Name="panelConfiguracionOperacion" HorizontalAlignment="Left" Height="57" Margin="339,32,0,0" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0"/>
 
