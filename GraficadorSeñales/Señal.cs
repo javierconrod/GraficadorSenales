@@ -18,16 +18,37 @@ namespace GraficadorSeñales
         {
             double periodoMuestreo = 1 / FrecuenciaMuestreo;
             Muestras.Clear();
-            for(double i = TiempoInicial; i <= TiempoFinal; i+=periodoMuestreo)
+            for (double i = TiempoInicial; i <= TiempoFinal; i += periodoMuestreo)
             {
                 double muestra = evaluar(i);
                 Muestras.Add(new Muestra(i, muestra));
 
-                if(Math.Abs(muestra) > AmplitudMaxima)
+                if (Math.Abs(muestra) > AmplitudMaxima)
                 {
                     AmplitudMaxima = Math.Abs(muestra);
                 }
             }
+        }
+
+        public static Señal escalaExponenecial(Señal señalOriginal, double exponente)
+        {
+            SeñalResultante resultado = new SeñalResultante();
+
+            resultado.TiempoInicial = señalOriginal.TiempoInicial;
+            resultado.TiempoFinal = señalOriginal.TiempoFinal;
+            resultado.FrecuenciaMuestreo = señalOriginal.FrecuenciaMuestreo;
+
+            foreach(var muestra in señalOriginal.Muestras)
+            {
+                double nuevoValor = Math.Pow(muestra.Y, exponente);
+                resultado.Muestras.Add(new Muestra(muestra.X, nuevoValor));
+                if(Math.Abs(nuevoValor) > resultado.AmplitudMaxima)
+                {
+                    resultado.AmplitudMaxima = Math.Abs(nuevoValor);
+                }
+            }
+            return resultado;
+
         }
         public static Señal escalarAmplitud(Señal señalOriginal, double factorEscala)
         {
@@ -41,7 +62,7 @@ namespace GraficadorSeñales
             {
                 double nuevoValor = muestra.Y * factorEscala;
                 resultado.Muestras.Add(new Muestra(muestra.X, nuevoValor));
-                if(Math.Abs(nuevoValor)>resultado.AmplitudMaxima)
+                if (Math.Abs(nuevoValor) > resultado.AmplitudMaxima)
                 {
                     resultado.AmplitudMaxima = Math.Abs(nuevoValor);
                 }
@@ -58,7 +79,7 @@ namespace GraficadorSeñales
 
             foreach (var muestra in señalOriginal.Muestras)
             {
-                double nuevoValor = muestra.X + cantidadDesplazamiento;
+                double nuevoValor = muestra.Y + cantidadDesplazamiento;
                 resultado.Muestras.Add(new Muestra(muestra.X, nuevoValor));
                 if (Math.Abs(nuevoValor) > resultado.AmplitudMaxima)
                 {
@@ -67,5 +88,6 @@ namespace GraficadorSeñales
             }
             return resultado;
         }
+        
     }
 }
