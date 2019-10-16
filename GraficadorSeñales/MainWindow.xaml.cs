@@ -252,6 +252,8 @@ namespace GraficadorSeñales
                 case 3: //escala exponencial
                     panelConfiguracionOperacion.Children.Add(new ConfiguracionOperacionEscalaExponencial());
                     break;
+                case 4: //transformada de Fourier
+                    break;
                 default:
                     break;
             }
