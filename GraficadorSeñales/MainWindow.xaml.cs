@@ -147,6 +147,11 @@ namespace GraficadorSeñales
                     señalResultante = Señal.escalaExponenecial(señal, exponente);
 
                     break;
+                case 4: //transformada de Fourier
+                    señalResultante = Señal.transformadaFourier(señal);
+
+
+                    break;
                default:
                     señalResultante = null;
 
